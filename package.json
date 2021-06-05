@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/DangerBearAZ/social-network-api#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.12.13",
+    "routes": "^2.1.0"
   }
 }
