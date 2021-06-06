@@ -43,8 +43,5 @@ UserSchema.virtual('friendCount').get(function() {
     );
 });
 
-//creating user model using the UserSchema 
-const User = model('User', UserSchema);
-
 //Exporting the User model 
 module.exports = User;
