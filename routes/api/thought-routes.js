@@ -10,13 +10,13 @@ const {
 
 //api/thoughts
 router
-.router('/')
-.route(addThought);
+.route('/')
+.post(addThought);
 
 
 // /api/comments/<thoughtID>/<commentId>
 router
-.router('/:id')
+.route('/:id')
 .get(getThoughtById)
 .put(updateThought)
 .delete(deleteThought);
