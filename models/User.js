@@ -21,27 +21,27 @@ const UserSchema = new Schema({
     ],
     friends: [
         {
-            type: schema.types.objectId,
+            type: Schema.Types.ObjectId,
             ref: 'User'
         }
     ]
 },
-{
-    toJSON: {
-         virtuals: true,
-         getters: true
-    },
-
-    id: false
-}
+    {
+        toJSON: {
+            vituals: true,
+            getters: true
+        },
+        id: false
+    }
 );
 
-//friends couts this is the the vitual and why it is set to true 
-UserSchema.virtual('friendCount').get(function() {
-    return this.friends.reduce(
-         (total, friends) => total + friends.length + 1, 0
-    );
+// count of friends 
+UserSchema.virtual('friendCount').get(function () {
+    return this.comments.length;
 });
+
+//creating user model using the UserSchema 
+const User = model('User', UserSchema);
 
 //Exporting the User model 
 module.exports = User;
