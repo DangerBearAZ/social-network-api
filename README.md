@@ -1,4 +1,4 @@
-% ooSQL Challenge: Social Network API
+# NoSQL Challenge: Social Network API
 ## Coding Boot Campp 
 
 ### Objective 
