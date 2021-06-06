@@ -12,7 +12,35 @@ const UserSchema = new Schema({
         unique: true,
         required: true,
         match: /.+\@.+\..+/
-    }
+    },
+    thoughts: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Thought'
+        }
+    ],
+    friends: [
+        {
+            type: schema.types.objectId,
+            ref: 'User'
+        }
+    ]
+},
+{
+    toJSON: {
+         virtuals: true,
+         getters: true
+    },
+
+    id: false
+}
+);
+
+//friends couts this is the the vitual and why it is set to true 
+UserSchema.virtual('friendCount').get(function() {
+    return this.friends.reduce(
+         (total, friends) => total + friends.length + 1, 0
+    );
 });
 
 //creating user model using the UserSchema 
