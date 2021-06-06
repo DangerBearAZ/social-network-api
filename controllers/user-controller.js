@@ -1,4 +1,4 @@
-const { User } = require ('../models');
+const { User, Test } = require ('../models');
 
 const userController = {
     //get all users 
@@ -60,4 +60,4 @@ const userController = {
 
 };
 
-module.exports = pizzaController; 
+module.exports = userController; 

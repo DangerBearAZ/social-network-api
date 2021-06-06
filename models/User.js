@@ -1,23 +1,17 @@
 const { Schema, model } = require('mongoose');
 
-const UserSchema = new Schema({ 
-    username:{
-        type: string,
+const UserSchema = new Schema({
+    userName: {
+        type: String,
         required: true,
         trim: true,
         unique: true
     },
-    emial:{
-        type: string, 
-        require: true, 
-        unique: true 
-
-    },
-    thought:{ 
-
-    },
-    friends: {
-
+    email: {
+        type: String,
+        unique: true,
+        required: true,
+        match: /.+\@.+\..+/
     }
 });
 
@@ -25,4 +19,4 @@ const UserSchema = new Schema({
 const User = model('User', UserSchema);
 
 //Exporting the User model 
-module.exports = User; 
+module.exports = User;
